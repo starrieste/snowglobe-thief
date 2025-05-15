@@ -15,7 +15,7 @@ The data folder is where all the images and the data that I AM using are.
 If you have any problems running the game, please message me!
 It may be a bit laggy (or at least I experienced some), I don't have the time to figure out why.
 
-Please do not try to open the maps in the data/maps folder!
+Please do not try to open the maps in the data/maps folder.
 Instead, use the editor.py file. Open it in your text editor, and change the LOAD_FILE variable
 to match which level you would like to open. Run it after changing.
 
@@ -24,6 +24,8 @@ The editor:
 - Ctrl + Mouse Wheel to zoom in/out
 
 # CREDIT
+
+All of the art was made by me using aseprite!
 
 Parts of my code is heavily inspired by / completely written by DaFluffyPotato (my idol for gamedev at the moment).
 His website: https://dafluffypotato.com/
