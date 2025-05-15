@@ -1,12 +1,12 @@
-Hello! My game is called Snowglobe Thief!
+# Snowglobe Thief
 
-STORY:
+# STORY
 
 You are Krampus! Santa claus's demon companion!
 You are feeling a bit bored, so you decided to go and steal all of santa's snowglobes for fun!
 Unfortunately, the elves are guarding stuff, so it may be harder than you thought!
 
-INFO:
+# INFO
 
 The plan folder is where I was planning my game, and sketched stuff out when I needed it.
 The scrap folder is where I put the assets I removed, but might use again just in case (I didn't use it again).
@@ -23,7 +23,7 @@ The editor:
 - WASD to pan
 - Ctrl + Mouse Wheel to zoom in/out
 
-CREDIT:
+# CREDIT
 
 Parts of my code is heavily inspired by / completely written by DaFluffyPotato (my idol for gamedev at the moment).
 His website: https://dafluffypotato.com/
