@@ -1,0 +1,369 @@
+[
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "pygame",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pygame",
+        "description": "pygame",
+        "detail": "pygame",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "data.scripts.text",
+        "description": "data.scripts.text",
+        "isExtraImport": true,
+        "detail": "data.scripts.text",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "data.scripts.text",
+        "description": "data.scripts.text",
+        "isExtraImport": true,
+        "detail": "data.scripts.text",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "data.scripts.utils",
+        "description": "data.scripts.utils",
+        "isExtraImport": true,
+        "detail": "data.scripts.utils",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "data.scripts.utils",
+        "description": "data.scripts.utils",
+        "isExtraImport": true,
+        "detail": "data.scripts.utils",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "data.scripts.utils",
+        "description": "data.scripts.utils",
+        "isExtraImport": true,
+        "detail": "data.scripts.utils",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "pygame.locals",
+        "description": "pygame.locals",
+        "isExtraImport": true,
+        "detail": "pygame.locals",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "data.scripts.tilemap",
+        "description": "data.scripts.tilemap",
+        "isExtraImport": true,
+        "detail": "data.scripts.tilemap",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "data.scripts.tilemap",
+        "description": "data.scripts.tilemap",
+        "isExtraImport": true,
+        "detail": "data.scripts.tilemap",
+        "documentation": {}
+    },
+    {
+        "label": "game_assets",
+        "importPath": "main",
+        "description": "main",
+        "isExtraImport": true,
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "data.scripts.entities",
+        "description": "data.scripts.entities",
+        "isExtraImport": true,
+        "detail": "data.scripts.entities",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "data.scripts.animation",
+        "description": "data.scripts.animation",
+        "isExtraImport": true,
+        "detail": "data.scripts.animation",
+        "documentation": {}
+    },
+    {
+        "label": "Animation",
+        "kind": 6,
+        "importPath": "data.scripts.animation",
+        "description": "data.scripts.animation",
+        "peekOfCode": "class Animation:\n    def __init__(self, images, img_dur=5, anim_offset=[0, 0], loop=True):\n        self.images = images\n        self.img_duration = img_dur\n        self.loop = loop\n        self.done = False\n        self.frame = 0\n        self.anim_offset = anim_offset\n    def copy(self):\n        return Animation(self.images, self.img_duration, self.anim_offset, self.loop)",
+        "detail": "data.scripts.animation",
+        "documentation": {}
+    },
+    {
+        "label": "PhysicsEntity",
+        "kind": 6,
+        "importPath": "data.scripts.entities",
+        "description": "data.scripts.entities",
+        "peekOfCode": "class PhysicsEntity: # class with gravity\n    def __init__(self, game, asset_id, pos, size=None):\n        self.game = game\n        self.asset_id = asset_id\n        self.pos = list(pos)\n        self.velocity = [0, 0]\n        self.collisions = {\"up\": False, \"down\": False, \"right\": False, \"left\": False}\n        self.action = \"\"\n        self.set_action(\"idle\")\n        self.size = self.animation.images[0].get_size() if not size else size",
+        "detail": "data.scripts.entities",
+        "documentation": {}
+    },
+    {
+        "label": "Player",
+        "kind": 6,
+        "importPath": "data.scripts.entities",
+        "description": "data.scripts.entities",
+        "peekOfCode": "class Player(PhysicsEntity):\n    def __init__(self, game, pos, size):\n        super().__init__(game, \"player\", pos, size)\n        self.air_time = 0\n        # these are some platformer tricks, used for better game feel\n        # the jump buffer makes it so you can press jump before hitting the ground and you still jump\n        self.jump_buffer = 0\n        # jump effect makes it so you can vary how high the jump is\n        self.jump_effect = False\n        self.jumps = 1",
+        "detail": "data.scripts.entities",
+        "documentation": {}
+    },
+    {
+        "label": "Elf",
+        "kind": 6,
+        "importPath": "data.scripts.entities",
+        "description": "data.scripts.entities",
+        "peekOfCode": "class Elf(PhysicsEntity):\n    def __init__(self, game, pos, flip=False):\n        super().__init__(game, \"elf\", pos, size=(5, 11))\n        self.lateral_movement = [False, False] # running left and right\n        self.OG_flip = flip # make the elf face the way it was originally facing\n        self.flip = flip\n        self.vision_range = 80\n        self.chasing = 0\n        self.walk_tick = 0\n        self.wait_tick = 0",
+        "detail": "data.scripts.entities",
+        "documentation": {}
+    },
+    {
+        "label": "InteractEntity",
+        "kind": 6,
+        "importPath": "data.scripts.entities",
+        "description": "data.scripts.entities",
+        "peekOfCode": "class InteractEntity:\n    def __init__(self, game, asset_id, pos, anim=True):\n        self.game = game\n        self.asset_id = asset_id\n        self.pos = list(pos)\n        if anim:\n            self.action = \"\"\n            self.set_action(\"idle\")\n            self.size = self.animation.images[0].get_size()\n        self.anim_offset = [0, 0]",
+        "detail": "data.scripts.entities",
+        "documentation": {}
+    },
+    {
+        "label": "Door",
+        "kind": 6,
+        "importPath": "data.scripts.entities",
+        "description": "data.scripts.entities",
+        "peekOfCode": "class Door(InteractEntity):\n    def __init__(self, game, pos):\n        super().__init__(game, \"door\", pos)\n        self.particles = []\n    def update(self):\n        super().update()\n        if self.colliding and self.game.interacting == True:\n            if self.game.player.holding_globe:\n                self.game.interacting = False\n                self.game.level = min(len(os.listdir(\"data/maps\"))-1, self.game.level+1)",
+        "detail": "data.scripts.entities",
+        "documentation": {}
+    },
+    {
+        "label": "Snowglobe",
+        "kind": 6,
+        "importPath": "data.scripts.entities",
+        "description": "data.scripts.entities",
+        "peekOfCode": "class Snowglobe(InteractEntity):\n    def __init__(self, game, pos):\n        super().__init__(game, \"snowglobe\", pos)\n        self.collected = False\n    def update(self):\n        super().update()\n        if self.colliding and not self.collected:\n            self.collected = True\n            self.game.player.holding_globe = True\n            self.game.particles.append(Particle(self.game, (self.pos[0]-10, self.pos[1]-12), \"obtain\"))",
+        "detail": "data.scripts.entities",
+        "documentation": {}
+    },
+    {
+        "label": "Spike",
+        "kind": 6,
+        "importPath": "data.scripts.entities",
+        "description": "data.scripts.entities",
+        "peekOfCode": "class Spike:\n    def __init__(self, game, pos, orientation):\n        self.game = game\n        self.pos = list(pos)\n        self.anim_offset = [0, 0]\n        self.flip = False\n        self.image = self.game.assets[\"spike-\"+str(orientation-1)][0].copy()\n        self.size = self.image.get_size()\n    def rect(self):\n        return pygame.Rect((self.pos[0]), (self.pos[1]), self.size[0], self.size[1])",
+        "detail": "data.scripts.entities",
+        "documentation": {}
+    },
+    {
+        "label": "Particle",
+        "kind": 6,
+        "importPath": "data.scripts.entities",
+        "description": "data.scripts.entities",
+        "peekOfCode": "class Particle:\n    def __init__(self, game, pos, img_name, vel=[0, 0], frame=0, flip=False):\n        self.game = game\n        self.pos = list(pos)\n        self.animation = self.game.assets[\"particle!\" + img_name][0].copy()\n        self.animation.frame = frame\n        self.size = self.animation.images[0].get_size()\n        self.velocity = vel\n        self.img_name = img_name\n        self.flip = flip",
+        "detail": "data.scripts.entities",
+        "documentation": {}
+    },
+    {
+        "label": "text",
+        "kind": 2,
+        "importPath": "data.scripts.text",
+        "description": "data.scripts.text",
+        "peekOfCode": "def text(font_img, desiredText=\"placeholder\",color=(220,220,250),font_specs=[(255,255,255),(0,0,0),(0,0,255),10],font_order=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',\n    'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',\n    '1','2','3','4','5','6','7','8','9','0',',','.','!','?','+','-','=','\\'',\n    '\"','_','~','<','>','*','|','#','$','&','/','\\\\','%',':',';','(',')','[',']','{','}',' '], scale=1): \n    lastX = -1\n    chars = []\n    for x in range(font_img.get_width()):\n        if font_img.get_at((x,0)) == font_specs[2]:\n            chars.append(clip(font_img,lastX+1,0,x-lastX-1,font_specs[3]))\n            lastX = x",
+        "detail": "data.scripts.text",
+        "documentation": {}
+    },
+    {
+        "label": "multiLineText",
+        "kind": 2,
+        "importPath": "data.scripts.text",
+        "description": "data.scripts.text",
+        "peekOfCode": "def multiLineText(font_img, glines=[\"placeholder\",\"second line placeholder\",\"third line placeholder\"],color=(220,220,250), spacing=0, scale=1): # multiple lines text\n    fontHeight = font_img.get_height()\n    lines = []\n    for line in glines:\n        lines.append(text(line,color,font_img))\n    lengths = []\n    for line in lines:\n        lengths.append(line.get_width())\n    surf = pygame.Surface((max(lengths),len(lines)*fontHeight+(len(lines)-1)*spacing))\n    for i in range(len(lines)):",
+        "detail": "data.scripts.text",
+        "documentation": {}
+    },
+    {
+        "label": "Tilemap",
+        "kind": 6,
+        "importPath": "data.scripts.tilemap",
+        "description": "data.scripts.tilemap",
+        "peekOfCode": "class Tilemap:\n    def __init__(self, game, tile_size=16):\n        self.game = game\n        self.tile_size = tile_size\n        self.tilemap = {}\n        self.background_tiles = {}\n        self.offgrid_tiles = []\n        self.entities = []\n        self.PHYSICS_TILES = set()\n        self.AUTOTILE_GROUPS = set()",
+        "detail": "data.scripts.tilemap",
+        "documentation": {}
+    },
+    {
+        "label": "AUTOTILE_MAP",
+        "kind": 5,
+        "importPath": "data.scripts.tilemap",
+        "description": "data.scripts.tilemap",
+        "peekOfCode": "AUTOTILE_MAP = {\n    tuple(sorted([(1, 0), (0, 1)])): 0,\n    tuple(sorted([(1, 0), (0, 1), (-1, 0)])): 1,\n    tuple(sorted([(-1, 0), (0, 1)])): 2,\n    tuple(sorted([(1, 0), (0, -1), (0, 1)])): 3,\n    tuple(sorted([(1, 0), (-1, 0), (0, 1), (0, -1)])): 4,\n    tuple(sorted([(-1, 0), (0, -1), (0, 1)])): 5,\n    tuple(sorted([(1, 0), (0, -1)])): 6,\n    tuple(sorted([(-1, 0), (0, -1), (1, 0)])): 7,\n    tuple(sorted([(-1, 0), (0, -1)])): 8,",
+        "detail": "data.scripts.tilemap",
+        "documentation": {}
+    },
+    {
+        "label": "NEIGHBOR_OFFSETS",
+        "kind": 5,
+        "importPath": "data.scripts.tilemap",
+        "description": "data.scripts.tilemap",
+        "peekOfCode": "NEIGHBOR_OFFSETS = []\nfor x in range(-1, 2):\n    for y in range(-1, 3):\n        NEIGHBOR_OFFSETS.append((x, y))\nclass Tilemap:\n    def __init__(self, game, tile_size=16):\n        self.game = game\n        self.tile_size = tile_size\n        self.tilemap = {}\n        self.background_tiles = {}",
+        "detail": "data.scripts.tilemap",
+        "documentation": {}
+    },
+    {
+        "label": "load_image",
+        "kind": 2,
+        "importPath": "data.scripts.utils",
+        "description": "data.scripts.utils",
+        "peekOfCode": "def load_image(path, colorkey=(0, 0, 0)):\n    path = BASE_IMG_PATH + path if not path.startswith(\"*\") else path.replace(\"*\", \"\")\n    img = pygame.image.load(path).convert()\n    img.set_colorkey(colorkey)\n    return img\n# load all images in a directory\ndef load_images(path):\n    images = []\n    for img_name in sorted(os.listdir(BASE_IMG_PATH + path)):\n        images.append(load_image(path + '/' + img_name))",
+        "detail": "data.scripts.utils",
+        "documentation": {}
+    },
+    {
+        "label": "load_images",
+        "kind": 2,
+        "importPath": "data.scripts.utils",
+        "description": "data.scripts.utils",
+        "peekOfCode": "def load_images(path):\n    images = []\n    for img_name in sorted(os.listdir(BASE_IMG_PATH + path)):\n        images.append(load_image(path + '/' + img_name))\n    return images\n# gets a part of an image, used for spritesheet\ndef clip(surf,x,y,x_size,y_size):\n    handle_surf = surf.copy()\n    clipR = pygame.Rect(x,y,x_size,y_size)\n    handle_surf.set_clip(clipR)",
+        "detail": "data.scripts.utils",
+        "documentation": {}
+    },
+    {
+        "label": "clip",
+        "kind": 2,
+        "importPath": "data.scripts.utils",
+        "description": "data.scripts.utils",
+        "peekOfCode": "def clip(surf,x,y,x_size,y_size):\n    handle_surf = surf.copy()\n    clipR = pygame.Rect(x,y,x_size,y_size)\n    handle_surf.set_clip(clipR)\n    image = surf.subsurface(handle_surf.get_clip())\n    return image.copy()\n# swaps colors... THIS IS THE FUNCTION I ACCIDENTALLY DELETED D:\ndef swap_color(img,old_c,new_c):\n    img.set_colorkey(old_c)\n    surf = img.copy()",
+        "detail": "data.scripts.utils",
+        "documentation": {}
+    },
+    {
+        "label": "swap_color",
+        "kind": 2,
+        "importPath": "data.scripts.utils",
+        "description": "data.scripts.utils",
+        "peekOfCode": "def swap_color(img,old_c,new_c):\n    img.set_colorkey(old_c)\n    surf = img.copy()\n    surf.fill(new_c)\n    surf.blit(img,(0,0))\n    return surf\n# loads an entire spritesheet...\n# I don't have the time to go into depth,\n# but it uses colors to tell where images begin and end\ndef load_spritesheet(spritesheet, colorkey=(0, 0, 0), two_d=False):",
+        "detail": "data.scripts.utils",
+        "documentation": {}
+    },
+    {
+        "label": "load_spritesheet",
+        "kind": 2,
+        "importPath": "data.scripts.utils",
+        "description": "data.scripts.utils",
+        "peekOfCode": "def load_spritesheet(spritesheet, colorkey=(0, 0, 0), two_d=False):\n    rows = []\n    sprites = []\n    for y in range(spritesheet.get_height()):\n        c = spritesheet.get_at((0,y))\n        c = (c[0],c[1],c[2])\n        if c == (255, 255, 0):\n            rows.append(y)\n    for row in rows:\n        row_content = []",
+        "detail": "data.scripts.utils",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_IMG_PATH",
+        "kind": 5,
+        "importPath": "data.scripts.utils",
+        "description": "data.scripts.utils",
+        "peekOfCode": "BASE_IMG_PATH = 'data/images/'\n# load single image\ndef load_image(path, colorkey=(0, 0, 0)):\n    path = BASE_IMG_PATH + path if not path.startswith(\"*\") else path.replace(\"*\", \"\")\n    img = pygame.image.load(path).convert()\n    img.set_colorkey(colorkey)\n    return img\n# load all images in a directory\ndef load_images(path):\n    images = []",
+        "detail": "data.scripts.utils",
+        "documentation": {}
+    },
+    {
+        "label": "Editor",
+        "kind": 6,
+        "importPath": "editor",
+        "description": "editor",
+        "peekOfCode": "class Editor:\n    def __init__(self):\n        pygame.init()\n        pygame.display.set_caption(\"editor\")\n        self.type = \"editor\"\n        self.DS = (1280, 720) # display size\n        self.display = pygame.display.set_mode(self.DS)\n        self.render_scales = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n        self.render_scale = self.render_scales[int((len(self.render_scales)-1)/2)]\n        self.canvas = pygame.Surface((self.DS[0] / self.render_scale, self.DS[1] / self.render_scale))",
+        "detail": "editor",
+        "documentation": {}
+    },
+    {
+        "label": "LOAD_FILE",
+        "kind": 5,
+        "importPath": "editor",
+        "description": "editor",
+        "peekOfCode": "LOAD_FILE = \"data/maps/0.json\"\nTILE_SIZE = 8\nclass Editor:\n    def __init__(self):\n        pygame.init()\n        pygame.display.set_caption(\"editor\")\n        self.type = \"editor\"\n        self.DS = (1280, 720) # display size\n        self.display = pygame.display.set_mode(self.DS)\n        self.render_scales = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]",
+        "detail": "editor",
+        "documentation": {}
+    },
+    {
+        "label": "TILE_SIZE",
+        "kind": 5,
+        "importPath": "editor",
+        "description": "editor",
+        "peekOfCode": "TILE_SIZE = 8\nclass Editor:\n    def __init__(self):\n        pygame.init()\n        pygame.display.set_caption(\"editor\")\n        self.type = \"editor\"\n        self.DS = (1280, 720) # display size\n        self.display = pygame.display.set_mode(self.DS)\n        self.render_scales = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n        self.render_scale = self.render_scales[int((len(self.render_scales)-1)/2)]",
+        "detail": "editor",
+        "documentation": {}
+    },
+    {
+        "label": "Game",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class Game:\n    def __init__(self):\n        pygame.init()\n        pygame.display.set_caption(\"Snowglobe Thief\")\n        self.type = \"game\"\n        self.DS = (960, 720) # display size\n        self.CS = (160, 120) # canvas size\n        self.display = pygame.display.set_mode(self.DS)\n        self.canvas = pygame.Surface(self.CS)\n        self.fps = 60",
+        "detail": "main",
+        "documentation": {}
+    }
+]

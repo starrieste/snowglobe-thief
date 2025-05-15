@@ -1,0 +1,17 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# VS Code settings
+.vscode/
+PythonImportHelper*.json
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Scrap/backup files
+scrap/
+*.bak
